@@ -135,3 +135,5 @@ API_KEY = config("API_KEY")
 CURRENT_TIME = datetime.now()
 
 URL = "https://www.googleapis.com/youtube/v3"
+
+CELERY_BROKER_URL = "redis://localhost:6379/1"
