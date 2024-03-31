@@ -11,8 +11,8 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
-from datetime import datetime
 from decouple import config
+from django.utils.module_loading import import_string
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "videosCenter",
+    "rest_framework",
 ]
 
 MIDDLEWARE = [
@@ -84,6 +85,9 @@ DATABASES = {
         "HOST": "localhost",
         "USER": "root",
         "PASSWORD": "90900",
+        "OPTIONS": {
+            "charset": "utf8mb4",
+        },
     }
 }
 
@@ -112,7 +116,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = "en-us"
 
-TIME_ZONE = "UTC"
+TIME_ZONE = "Asia/Kolkata"
 
 USE_I18N = True
 
@@ -130,10 +134,17 @@ STATIC_URL = "static/"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 
-API_KEY = config("API_KEY")
-
-CURRENT_TIME = datetime.now()
+API_KEYS = [config("DEFAULT_API_KEY"), config("API_KEY_1")]
 
 URL = "https://www.googleapis.com/youtube/v3"
+PREDEFINED_SEARCH_QUERIES = ["vlogging", "gaming", "cricket", "web series"]
+API_CLASS_PATH = "videosCenter.utils.GetLatestVideos"
+API_CLASS_OBJ = import_string(API_CLASS_PATH)()
 
 CELERY_BROKER_URL = "redis://localhost:6379/1"
+CELERY_BEAT_SCHEDULE = {
+    "youtube_videos": {
+        "task": "videosCenter.tasks.get_videos_from_youtube",
+        "schedule": 10,
+    },
+}
