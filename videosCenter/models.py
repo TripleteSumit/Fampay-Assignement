@@ -15,7 +15,7 @@ class Thumbnails(models.Model):
     width = models.IntegerField()
     height = models.IntegerField()
     video = models.ForeignKey(
-        Videos, on_delete=models.CASCADE, related_name="thumnails"
+        Videos, on_delete=models.CASCADE, related_name="thumbnails"
     )
 
     def __str__(self) -> str:
