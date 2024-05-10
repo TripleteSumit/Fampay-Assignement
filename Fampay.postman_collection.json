@@ -1,0 +1,143 @@
+{
+	"info": {
+		"_postman_id": "8c4dcf33-6636-45dc-b1d2-ed560fb447b9",
+		"name": "Fampay",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "31638293"
+	},
+	"item": [
+		{
+			"name": "Application",
+			"item": [
+				{
+					"name": "Get Videos",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Youtube API",
+			"item": [
+				{
+					"name": "Search List",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://www.googleapis.com/youtube/v3/search?part=snippet&order=date&publishedAfter=2024-03-26T12:48:53Z&type=video&key=AIzaSyDDFDbngRegqL8wIsTU688JK7RezRvU_4k&q=gaming",
+							"protocol": "https",
+							"host": [
+								"www",
+								"googleapis",
+								"com"
+							],
+							"path": [
+								"youtube",
+								"v3",
+								"search"
+							],
+							"query": [
+								{
+									"key": "part",
+									"value": "snippet"
+								},
+								{
+									"key": "order",
+									"value": "date"
+								},
+								{
+									"key": "publishedAfter",
+									"value": "2024-03-26T12:48:53Z"
+								},
+								{
+									"key": "type",
+									"value": "video"
+								},
+								{
+									"key": "key",
+									"value": "AIzaSyDDFDbngRegqL8wIsTU688JK7RezRvU_4k"
+								},
+								{
+									"key": "q",
+									"value": "gaming"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Videos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://www.googleapis.com/youtube/v3/videos?part=snippet&order=date&publishedAfter=2024-03-25T00:00:00Z&type=video&key=AIzaSyDDFDbngRegqL8wIsTU688JK7RezRvU_4k",
+							"protocol": "https",
+							"host": [
+								"www",
+								"googleapis",
+								"com"
+							],
+							"path": [
+								"youtube",
+								"v3",
+								"videos"
+							],
+							"query": [
+								{
+									"key": "part",
+									"value": "snippet"
+								},
+								{
+									"key": "order",
+									"value": "date"
+								},
+								{
+									"key": "publishedAfter",
+									"value": "2024-03-25T00:00:00Z"
+								},
+								{
+									"key": "type",
+									"value": "video"
+								},
+								{
+									"key": "key",
+									"value": "AIzaSyDDFDbngRegqL8wIsTU688JK7RezRvU_4k"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
