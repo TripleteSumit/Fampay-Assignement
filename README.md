@@ -53,3 +53,7 @@ use linux system as celery configuring doesn't support in windows
 
 - After configuring the project when you hit the get api you can get the latest videos in chronological order
 - Youtube API get call in every 10 second if the quota limit is finished then it jump to another API_KEY (only two api keys used here)
+
+## Test the API
+
+- [POSTMAN](https://github.com/TripleteSumit/Fampay-Assignement/blob/master/Fampay.postman_collection.json)
